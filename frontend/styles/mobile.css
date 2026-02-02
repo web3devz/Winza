@@ -1,0 +1,215 @@
+/* Mobile-specific styles and optimizations */
+
+/* Prevent text selection on mobile for better UX */
+@media (max-width: 768px) {
+  .no-select {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+  }
+  
+  /* Improve button interactions */
+  button, .button, [role="button"] {
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+  
+  /* Optimize input fields */
+  input, textarea, select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 8px;
+  }
+  
+  /* Improve scroll momentum */
+  .scroll-smooth {
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+  }
+  
+  /* Optimize scroll behavior */
+  .cards-container {
+    touch-action: pan-x;
+  }
+  
+  /* Allow normal scrolling */
+  .main-content {
+    touch-action: auto;
+  }
+  
+  /* Card hover effects for mobile */
+  .card-mobile:active {
+    transform: scale(0.98);
+    transition: transform 0.1s ease;
+  }
+  
+  /* Better focus states */
+  .focus-mobile:focus {
+    outline: 2px solid #3b82f6;
+    outline-offset: 2px;
+    border-radius: 8px;
+  }
+  
+  /* Optimize animations for mobile */
+  .animate-mobile {
+    will-change: transform;
+    backface-visibility: hidden;
+    perspective: 1000px;
+  }
+  
+  /* Improve text readability */
+  .text-mobile {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+  
+  /* Better spacing for touch */
+  .spacing-mobile {
+    padding: 12px 16px;
+    margin: 8px 0;
+  }
+  
+  /* Optimize images for mobile */
+  img {
+    max-width: 100%;
+    height: auto;
+    image-rendering: -webkit-optimize-contrast;
+  }
+  
+  /* Improve modal animations */
+  .modal-enter {
+    animation: modalSlideUp 0.3s ease-out;
+  }
+  
+  .modal-exit {
+    animation: modalSlideDown 0.3s ease-in;
+  }
+  
+  @keyframes modalSlideUp {
+    from {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes modalSlideDown {
+    from {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    to {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+  }
+  
+  /* Improve button feedback */
+  .button-mobile:active {
+    transform: scale(0.95);
+    transition: transform 0.1s ease;
+  }
+  
+  /* Better loading states */
+  .loading-mobile {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  
+  /* Optimize for PWA */
+  .pwa-mobile {
+    display: block;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+  }
+}
+
+/* Landscape mode optimizations */
+@media (max-width: 768px) and (orientation: landscape) {
+  body.landscape-mobile {
+    padding: 4px 8px;
+  }
+  
+  .landscape-mobile .header {
+    padding: 4px 16px;
+    height: 50px;
+  }
+  
+  .landscape-mobile .content {
+    padding-top: 50px;
+  }
+  
+  .landscape-mobile .game-card {
+    height: auto;
+    min-height: 200px;
+  }
+  
+  .landscape-mobile .modal {
+    max-height: 90vh;
+  }
+}
+
+/* High DPI displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .high-dpi-mobile {
+    image-rendering: -webkit-optimize-contrast;
+  }
+}
+
+/* Dark mode support for mobile */
+@media (prefers-color-scheme: dark) and (max-width: 768px) {
+  .dark-mobile {
+    background-color: #1f2937;
+    color: #f9fafb;
+  }
+  
+  .card-dark-mobile {
+    background-color: #374151;
+    border-color: #4b5563;
+  }
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .motion-reduce-mobile * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* iOS specific fixes */
+@supports (-webkit-touch-callout: none) {
+  .ios-mobile {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+  }
+  
+  /* Fix iOS Safari viewport issues */
+  .ios-viewport {
+    height: -webkit-fill-available;
+  }
+  
+  /* Fix iOS input zoom */
+  input[type="text"],
+  input[type="number"],
+  input[type="email"],
+  textarea,
+  select {
+    font-size: 16px !important;
+  }
+}
+
+/* Android specific fixes */
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  .android-mobile {
+    -webkit-tap-highlight-color: transparent;
+  }
+}

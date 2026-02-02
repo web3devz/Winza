@@ -1,0 +1,41 @@
+{
+  "name": "linera-prediction-orchestrator",
+  "version": "1.0.0",
+  "description": "Orchestrator for Linera Prediction Game - автоматично закриває та резолвить раунди з реальними цінами криптовалют",
+  "main": "orchestrator.js",
+  "scripts": {
+    "start": "node orchestrator.js",
+    "dev": "nodemon orchestrator.js",
+    "lottery:sync": "node lottery-supabase-sync.js",
+    "dev:lottery:sync": "nodemon lottery-supabase-sync.js",
+    "lottery": "node lottery-orchestrator.js",
+    "dev:lottery": "nodemon lottery-orchestrator.js",
+    "leaderboard:sync": "node leaderboard-pb-sync.js",
+    "test": "node -e \"console.log('Testing orchestrator...'); require('./orchestrator.js')\""
+  },
+  "dependencies": {
+    "axios": "^1.6.0",
+    "graphql-request": "^7.3.3",
+    "pg": "^8.12.0",
+    "pocketbase": "^0.21.3",
+    "ws": "^8.18.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.0"
+  },
+  "keywords": [
+    "linera",
+    "prediction",
+    "game",
+    "orchestrator",
+    "crypto",
+    "binance",
+    "btc",
+    "eth"
+  ],
+  "author": "Linera Prediction Game Team",
+  "license": "MIT",
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}

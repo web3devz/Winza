@@ -1,0 +1,9 @@
+HTTP/1.1 500 Internal Server Error
+content-type: text/plain; charset=utf-8
+vary: origin, access-control-request-method, access-control-request-headers
+access-control-allow-origin: *
+access-control-expose-headers: *
+content-length: 1354
+date: Tue, 09 Dec 2025 16:05:32 GMT
+
+{"error":["Local node operation failed: Worker operation failed: Execution error: Failed to execute Wasm module: RuntimeError: unreachable\n    at __rust_start_panic (rounds_service-fb2c6b8c2cd9a092.wasm[2072]:0x1db5c1)\n    at rust_panic (rounds_service-fb2c6b8c2cd9a092.wasm[2068]:0x1db4f5)\n    at std::panicking::rust_panic_with_hook::h4501cceb7dbe383d (rounds_service-fb2c6b8c2cd9a092.wasm[2067]:0x1db4e6)\n    at std::panicking::begin_panic_handler::{{closure}}::hc2b9d3fc26dda7f9 (rounds_service-fb2c6b8c2cd9a092.wasm[2050]:0x1da9a5)\n    at std::sys::backtrace::__rust_end_short_backtrace::hf6a83a0a2155b9c0 (rounds_service-fb2c6b8c2cd9a092.wasm[2049]:0x1da911)\n    at rust_begin_unwind (rounds_service-fb2c6b8c2cd9a092.wasm[2059]:0x1db07b)\n    at core::panicking::panic_fmt::h619600efce2da276 (rounds_service-fb2c6b8c2cd9a092.wasm[2156]:0x1e8a6b)\n    at <rounds_service::RoundsService as linera_sdk::service::wit::exports::linera::app::service_entrypoints::Guest>::handle_query::h91a9cf6535e6c5c4 (rounds_service-fb2c6b8c2cd9a092.wasm[832]:0xf13ef)\n    at linera_sdk::service::wit::exports::linera::app::service_entrypoints::_export_handle_query_cabi::h0c515f799e0a6616 (rounds_service-fb2c6b8c2cd9a092.wasm[918]:0xff58b)\n    at linera:app/service-entrypoints#handle-query (rounds_service-fb2c6b8c2cd9a092.wasm[833]:0xf483b) during Query"]}

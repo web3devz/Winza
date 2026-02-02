@@ -1,0 +1,81 @@
+[
+  {
+    "id": "pbc_lottery_winners",
+    "listRule": "",
+    "viewRule": "",
+    "createRule": "",
+    "updateRule": "",
+    "deleteRule": "",
+    "name": "lottery_winners",
+    "type": "base",
+    "fields": [
+      {
+        "autogeneratePattern": "[a-z0-9]{15}",
+        "hidden": false,
+        "id": "text_id",
+        "max": 15,
+        "min": 15,
+        "name": "id",
+        "pattern": "^[a-z0-9]+$",
+        "presentable": false,
+        "primaryKey": true,
+        "required": true,
+        "system": true,
+        "type": "text"
+      },
+      {
+        "hidden": false,
+        "id": "number_round_id",
+        "max": null,
+        "min": 0,
+        "name": "round_id",
+        "onlyInt": true,
+        "presentable": false,
+        "required": true,
+        "system": false,
+        "type": "number"
+      },
+      {
+        "hidden": false,
+        "id": "text_ticket_number",
+        "max": null,
+        "min": null,
+        "name": "ticket_number",
+        "pattern": "",
+        "presentable": false,
+        "required": true,
+        "system": false,
+        "type": "text"
+      },
+      {
+        "hidden": false,
+        "id": "text_source_chain_id",
+        "max": null,
+        "min": null,
+        "name": "source_chain_id",
+        "pattern": "",
+        "presentable": false,
+        "required": true,
+        "system": false,
+        "type": "text"
+      },
+      {
+        "hidden": false,
+        "id": "text_prize_amount",
+        "max": null,
+        "min": null,
+        "name": "prize_amount",
+        "pattern": "",
+        "presentable": false,
+        "required": true,
+        "system": false,
+        "type": "text"
+      }
+    ],
+    "indexes": [
+      "CREATE UNIQUE INDEX IF NOT EXISTS idx_lottery_winners_unique ON lottery_winners(round_id, ticket_number, source_chain_id)",
+      "CREATE INDEX IF NOT EXISTS idx_lottery_winners_round_id ON lottery_winners(round_id)"
+    ],
+    "system": false
+  }
+]
