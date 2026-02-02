@@ -1,0 +1,28 @@
+[package]
+name = "lottery-app"
+version = "0.1.0"
+edition = "2021"
+
+[features]
+test = []
+
+[dependencies]
+linera-sdk = "0.15.7"
+async-graphql = { version = "7.0.17", default-features = false }
+serde = { version = "1.0", features = ["derive"] }
+native = { path = "../native" }
+lottery-abi = { path = "../lottery-abi" }
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[target.'cfg(not(target_arch = "wasm32"))'.dev-dependencies]
+tokio = { version = "1.48" }
+
+[[bin]]
+name = "lottery_app_contract"
+path = "src/contract.rs"
+
+[[bin]]
+name = "lottery_app_service"
+path = "src/service.rs"
